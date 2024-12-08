@@ -6,25 +6,33 @@
     <title>Game Finder</title>
     <meta name="description" content="Discover and play fun games like Slope, Snow Rider, Block Blast, Dino Game, Traffic Jam 3D, and many more!">
     <style>
-        body {
+        /* Reset default margins and paddings */
+        * {
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle, #f0f8ff, #e0f7fa, #b3e5fc);
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #f0f8ff, #e0f7fa, #b3e5fc);
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
             flex-direction: column;
+            align-items: center;
             min-height: 100vh;
         }
 
         .game-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-auto-rows: 150px;
             gap: 15px;
             width: 90%;
             max-width: 1600px;
             padding: 20px;
+            margin-top: 20px;
+            flex-grow: 1;
+            grid-auto-flow: dense;
         }
 
         .game {
@@ -34,14 +42,47 @@
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #e0e0e0;
+            background-color: #ccc; /* Placeholder background */
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
             color: inherit;
-            min-height: 150px;
-            background-color: #ccc; /* Placeholder background */
+        }
+
+        /* Size classes with distinct aspect ratios */
+        .game.large { 
+            grid-column: span 2; 
+            grid-row: span 2; 
+            aspect-ratio: 4 / 3;
+        }
+        .game.medium { 
+            grid-column: span 1; 
+            grid-row: span 1; 
+            aspect-ratio: 3 / 2;
+        }
+        .game.small { 
+            grid-column: span 1; 
+            grid-row: span 1; 
+            aspect-ratio: 1 / 1;
+        }
+
+        /* Emoji Styles */
+        .game.emoji {
+            background: #ffffff;
+            font-size: 3em;
+            color: #333333;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game.emoji .emoji-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            font-size: 2em;
         }
 
         .game img, .game .emoji-content {
@@ -83,41 +124,6 @@
 
         .game:hover .game-title {
             opacity: 1;
-        }
-
-        /* Size classes */
-        .game.large { 
-            grid-column: span 2; 
-            grid-row: span 2; 
-            min-height: 200px;
-        }
-        .game.medium { 
-            grid-column: span 1.5; 
-            grid-row: span 1.5; 
-            min-height: 175px;
-        }
-        .game.small { 
-            grid-column: span 1; 
-            grid-row: span 1; 
-            min-height: 150px;
-        }
-
-        /* Emoji Styles */
-        .game.emoji {
-            background: #ffffff;
-            font-size: 3em;
-            color: #333333;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .game.emoji .emoji-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            font-size: 2em;
         }
 
         /* QR Code Styles */
@@ -179,24 +185,20 @@
             .game.large { 
                 grid-column: span 1; 
                 grid-row: span 1; 
-                min-height: 150px;
+                aspect-ratio: 3 / 2;
             }
             .game.medium { 
                 grid-column: span 1; 
                 grid-row: span 1; 
-                min-height: 150px;
+                aspect-ratio: 2 / 1;
             }
         }
     </style>
 </head>
 <body>
     <div class="game-container">
-        <!-- Randomized Game Entries -->
+        <!-- Game Entries -->
         <!-- Large Games -->
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" target="_blank" rel="noopener noreferrer" class="game large">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/drifthuntersicon_jktzb4.jpg?_s=public-apps" alt="Drift Hunters Game" onload="this.classList.add('loaded')">
-            <div class="game-title">Drift Hunters</div>
-        </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" target="_blank" rel="noopener noreferrer" class="game large">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649749/slope-game-v1_wkxd3b.jpg?_s=public-apps" alt="Slope Game" onload="this.classList.add('loaded')">
             <div class="game-title">Slope</div>
@@ -204,6 +206,10 @@
         <a href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" target="_blank" rel="noopener noreferrer" class="game large">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649010/snow-rider-m180x180_ktraws.jpg?_s=public-apps" alt="Snow Rider Game" onload="this.classList.add('loaded')">
             <div class="game-title">Snow Rider</div>
+        </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" target="_blank" rel="noopener noreferrer" class="game large">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/drifthuntersicon_jktzb4.jpg?_s=public-apps" alt="Drift Hunters Game" onload="this.classList.add('loaded')">
+            <div class="game-title">Drift Hunters</div>
         </a>
 
         <!-- Medium Games -->
@@ -325,11 +331,12 @@
         </a>
     </div>
 
-    <!-- QR Code Section -->
+    <!-- Footer with Google Form Link -->
     <div class="footer">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFiegPH6GsWIWERzfbtptJW2GMk4exkrTQsdqlR2-2oj83zA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">Provide Feedback</a>
     </div>
 
+    <!-- QR Code Section -->
     <div class="qr-code">
         <a href="https://sites.google.com/view/staticquasar931" target="_blank" rel="noopener noreferrer">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733694622/frame_1_vmv9y3.png" alt="QR Code for Game Finder">
@@ -354,6 +361,16 @@
             emojis.forEach(emoji => {
                 emoji.classList.add('loaded');
             });
+
+            // Shuffle game elements to ensure random order
+            const container = document.querySelector('.game-container');
+            const games = Array.from(container.children);
+            for (let i = games.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [games[i], games[j]] = [games[j], games[i]];
+            }
+            // Append shuffled games back to container
+            games.forEach(game => container.appendChild(game));
         });
     </script>
 </body>
