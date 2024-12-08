@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Finder</title>
-    <meta name="description" content="Explore a variety of fun and engaging games all in one place! Find your favorite games like Snow Rider, Slope, Cookie Clicker, and more.">
+    <meta name="description" content="Discover your favorite games in this interactive directory! From Snow Rider to Angry Birds, find and play games easily.">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Soft blue gradient */
+            background: radial-gradient(circle, #e3f2fd, #bbdefb, #90caf9); /* Enhanced gradient background */
             font-family: Arial, sans-serif;
             display: flex;
+            justify-content: center;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
         .game-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
-            padding: 20px;
             width: 90%;
             max-width: 1600px;
+            padding: 20px;
         }
 
         .game {
@@ -30,7 +32,7 @@
             overflow: hidden;
             border-radius: 10px;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -42,7 +44,7 @@
 
         .game:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .game-title {
@@ -72,51 +74,51 @@
 <body>
     <div class="game-container">
         <!-- Large Games -->
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider?authuser=0" class="game large">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" class="game large">
             <img src="main/snow-rider-m180x180.webp" alt="Snow Rider Game">
             <div class="game-title">Snow Rider Game</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe?authuser=0" class="game large">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" class="game large">
             <img src="main/mqdefault.jpg" alt="Slope Game">
             <div class="game-title">Slope Game</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters?authuser=0" class="game large">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" class="game large">
             <img src="main/drifthuntersicon.avif" alt="Drift Hunters Game">
             <div class="game-title">Drift Hunters Game</div>
         </a>
 
         <!-- Medium Games -->
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/paper-io?authuser=0" class="game medium">
-            <img src="main/Logo_of_Geometry_Dash.svg.png" alt="Paper.io 2 Game">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/paper-io" class="game medium">
+            <img src="main/paper-io-2-d.webp" alt="Paper.io 2 Game">
             <div class="game-title">Paper.io 2 Game</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/moto-x3m?authuser=0" class="game medium">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/moto-x3m" class="game medium">
             <img src="main/motoicon.jpg" alt="Moto X3M Game">
             <div class="game-title">Moto X3M Game</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/cookie-clicker?authuser=0" class="game medium">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/cookie-clicker" class="game medium">
             <img src="main/cookieclickericon.webp" alt="Cookie Clicker Game">
             <div class="game-title">Cookie Clicker Game</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/big-tower-tiny-square?authuser=0" class="game medium">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/big-tower-tiny-square" class="game medium">
             <img src="main/BigTowerTinySquare_OG-logo.jpg" alt="Big Tower Tiny Square Game">
             <div class="game-title">Big Tower Tiny Square Game</div>
         </a>
 
         <!-- Small Games -->
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/nugget-clicker?authuser=0" class="game small">
-            <img src="main/vex6icon.jpg" alt="Nugget Clicker Game">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/nugget-clicker" class="game small">
+            <img src="main/nuggetclickericon.jpg" alt="Nugget Clicker Game">
             <div class="game-title">Nugget Clicker Game</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/static-gmes/coffee-clicker?authuser=0" class="game small">
+        <a href="https://sites.google.com/view/staticquasar931/static-gmes/coffee-clicker" class="game small">
             <div style="font-size: 80px; text-align: center;">☕</div>
             <div class="game-title">Coffee Clicker Game</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/angry-birds?authuser=0" class="game small">
-            <img src="main/makemoneyicon.png" alt="Angry Birds Game">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/angry-birds" class="game small">
+            <img src="main/Angry_Birds_promo_art.png" alt="Angry Birds Game">
             <div class="game-title">Angry Birds Game</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/static-gmes/interstellar-trader/intersteller-trader-beta?authuser=0" class="game small">
+        <a href="https://sites.google.com/view/staticquasar931/static-gmes/interstellar-trader/intersteller-trader-beta" class="game small">
             <img src="main/neonblastersicon.jpg" alt="Interstellar Trader Beta Game">
             <div class="game-title">Interstellar Trader Beta Game</div>
         </a>
