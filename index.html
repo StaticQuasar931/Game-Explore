@@ -13,8 +13,9 @@
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             flex-direction: column;
+            min-height: 100vh;
         }
 
         .game-container {
@@ -39,12 +40,26 @@
             align-items: center;
             text-decoration: none;
             color: inherit;
+            min-height: 150px;
+            background-color: #ccc; /* Placeholder background */
         }
 
-        .game img {
+        .game img, .game .emoji-content {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: opacity 0.3s ease;
+            display: block;
+        }
+
+        /* Hide the content until loaded */
+        .game img, .game .emoji-content {
+            opacity: 0;
+        }
+
+        /* Show the content once loaded */
+        .game img.loaded, .game .emoji-content.loaded {
+            opacity: 1;
         }
 
         .game:hover {
@@ -80,6 +95,8 @@
             background: #ffffff;
             font-size: 3em;
             color: #333333;
+            justify-content: center;
+            align-items: center;
         }
 
         .game.emoji .emoji-content {
@@ -90,135 +107,204 @@
             width: 100%;
             font-size: 2em;
         }
+
+        /* QR Code Styles */
+        .qr-code {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .qr-code img {
+            width: 150px;
+            height: 150px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            width: 90%;
+            max-width: 1600px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border: 2px solid #333;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .footer a:hover {
+            background-color: #333;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
     <div class="game-container">
         <!-- Large Games -->
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" target="_blank" rel="noopener noreferrer" class="game large">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649749/slope-game-v1_wkxd3b.jpg?_s=public-apps" alt="Slope Game">
-            <div class="game-title">Slope</div>
-        </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" target="_blank" rel="noopener noreferrer" class="game large">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649010/snow-rider-m180x180_ktraws.jpg?_s=public-apps" alt="Snow Rider Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649010/snow-rider-m180x180_ktraws.jpg?_s=public-apps" alt="Snow Rider Game" onload="this.classList.add('loaded')">
             <div class="game-title">Snow Rider</div>
         </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" target="_blank" rel="noopener noreferrer" class="game large">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649749/slope-game-v1_wkxd3b.jpg?_s=public-apps" alt="Slope Game" onload="this.classList.add('loaded')">
+            <div class="game-title">Slope</div>
+        </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" target="_blank" rel="noopener noreferrer" class="game large">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/drifthuntersicon_jktzb4.jpg?_s=public-apps" alt="Drift Hunters Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/drifthuntersicon_jktzb4.jpg?_s=public-apps" alt="Drift Hunters Game" onload="this.classList.add('loaded')">
             <div class="game-title">Drift Hunters</div>
         </a>
 
         <!-- Medium Games -->
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/paper-io" target="_blank" rel="noopener noreferrer" class="game medium">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649001/paper-io-2-d_lop5lb.jpg?_s=public-apps" alt="Paper.io 2 Game">
-            <div class="game-title">Paper.io 2</div>
-        </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/moto-x3m" target="_blank" rel="noopener noreferrer" class="game medium">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/motoicon_qkrb7c.jpg?_s=public-apps" alt="Moto X3M Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/motoicon_qkrb7c.jpg?_s=public-apps" alt="Moto X3M Game" onload="this.classList.add('loaded')">
             <div class="game-title">Moto X3M</div>
         </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/paper-io" target="_blank" rel="noopener noreferrer" class="game medium">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649001/paper-io-2-d_lop5lb.jpg?_s=public-apps" alt="Paper.io 2 Game" onload="this.classList.add('loaded')">
+            <div class="game-title">Paper.io 2</div>
+        </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/blooky-blasta/with-ads" target="_blank" rel="noopener noreferrer" class="game medium">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649003/blockblasticon_oayolq.jpg?_s=public-apps" alt="Block Blast Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649003/blockblasticon_oayolq.jpg?_s=public-apps" alt="Block Blast Game" onload="this.classList.add('loaded')">
             <div class="game-title">Block Blast</div>
         </a>
 
         <!-- Small Games -->
-        <!-- Arranged to spread out large and medium games -->
         <a href="https://sites.google.com/view/staticquasar931/gm3z/trafic-jam-3d" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733651153/Screenshot_2024-12-08_001210_qjtjvb.jpg?_s=public-apps" alt="Traffic Jam 3D Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733651153/Screenshot_2024-12-08_001210_qjtjvb.jpg?_s=public-apps" alt="Traffic Jam 3D Game" onload="this.classList.add('loaded')">
             <div class="game-title">Traffic Jam 3D</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/stack" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649010/mqdefault_fsc4k3.jpg?_s=public-apps" alt="Stack Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649010/mqdefault_fsc4k3.jpg?_s=public-apps" alt="Stack Game" onload="this.classList.add('loaded')">
             <div class="game-title">Stack</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/fireboywatergirl" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733692621/fireboywatergirl_lph1cc.jpg?_s=public-apps" alt="Fireboy and Watergirl Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733692621/fireboywatergirl_lph1cc.jpg?_s=public-apps" alt="Fireboy and Watergirl Game" onload="this.classList.add('loaded')">
             <div class="game-title">Fireboy and Watergirl</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/static-gmes/interstellar-trader/intersteller-trader-beta" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649001/88bd324e-48b1-4f80-b75f-bb707da10cf6_t0mzde.jpg?_s=public-apps" alt="Interstellar Trader Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649001/88bd324e-48b1-4f80-b75f-bb707da10cf6_t0mzde.jpg?_s=public-apps" alt="Interstellar Trader Game" onload="this.classList.add('loaded')">
             <div class="game-title">Interstellar Trader</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/geom-dash" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649004/geomdashicon_sakjb7.jpg?_s=public-apps" alt="Geometry Dash Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649004/geomdashicon_sakjb7.jpg?_s=public-apps" alt="Geometry Dash Game" onload="this.classList.add('loaded')">
             <div class="game-title">Geometry Dash</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/2048-again4" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649010/2048icon_ujfmxv.jpg?_s=public-apps" alt="2048 Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649010/2048icon_ujfmxv.jpg?_s=public-apps" alt="2048 Game" onload="this.classList.add('loaded')">
             <div class="game-title">2048</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/flappy-bird_1" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649004/flappybirdicon_ofwk8d.jpg?_s=public-apps" alt="Flappy Bird Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649004/flappybirdicon_ofwk8d.jpg?_s=public-apps" alt="Flappy Bird Game" onload="this.classList.add('loaded')">
             <div class="game-title">Flappy Bird</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/cookie-clicker" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649007/cookieclickericon_oz00tj.jpg?_s=public-apps" alt="Cookie Clicker Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649007/cookieclickericon_oz00tj.jpg?_s=public-apps" alt="Cookie Clicker Game" onload="this.classList.add('loaded')">
             <div class="game-title">Cookie Clicker</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/adventure-capitalist" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649002/adventurecapicon_ypbzu4.jpg?_s=public-apps" alt="Adventure Capitalist Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649002/adventurecapicon_ypbzu4.jpg?_s=public-apps" alt="Adventure Capitalist Game" onload="this.classList.add('loaded')">
             <div class="game-title">Adventure Capitalist</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/Dino-Gvme" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/dinogameicon_wyehip.jpg?_s=public-apps" alt="Dino Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/dinogameicon_wyehip.jpg?_s=public-apps" alt="Dino Game" onload="this.classList.add('loaded')">
             <div class="game-title">Dino Game</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/merge-fruit" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649005/mergefruiticon_rzz4yg.jpg?_s=public-apps" alt="Merge Fruit Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649005/mergefruiticon_rzz4yg.jpg?_s=public-apps" alt="Merge Fruit Game" onload="this.classList.add('loaded')">
             <div class="game-title">Merge Fruit</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/angry-birds" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/Angry_Birds_promo_art_ex7ske.jpg?_s=public-apps" alt="Angry Birds Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/Angry_Birds_promo_art_ex7ske.jpg?_s=public-apps" alt="Angry Birds Game" onload="this.classList.add('loaded')">
             <div class="game-title">Angry Birds</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/circloo" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/circloo_u0fhts.jpg?_s=public-apps" alt="Circloo Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/circloo_u0fhts.jpg?_s=public-apps" alt="Circloo Game" onload="this.classList.add('loaded')">
             <div class="game-title">Circloo</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/color-road" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649004/colorroadicon_izrnnp.jpg?_s=public-apps" alt="Color Road Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649004/colorroadicon_izrnnp.jpg?_s=public-apps" alt="Color Road Game" onload="this.classList.add('loaded')">
             <div class="game-title">Color Road</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/nugget-clicker" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649002/nuggetclickericon_wvfv26.jpg?_s=public-apps" alt="Nugget Clicker Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649002/nuggetclickericon_wvfv26.jpg?_s=public-apps" alt="Nugget Clicker Game" onload="this.classList.add('loaded')">
             <div class="game-title">Nugget Clicker</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/run-3" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649006/run-3icon_priebu.jpg?_s=public-apps" alt="Run 3 Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733694150/Tetris_logo_mjddfg.webp" alt="Run 3 Game" onload="this.classList.add('loaded')">
             <div class="game-title">Run 3</div>
         </a>
+        
         <!-- Coffee Clicker with Emoji -->
         <a href="https://sites.google.com/view/staticquasar931/static-gmes/coffee-clicker" target="_blank" rel="noopener noreferrer" class="game small emoji">
-            <div class="emoji-content">☕</div>
+            <div class="emoji-content loaded">☕</div>
             <div class="game-title">Coffee Clicker ☕</div>
         </a>
+
         <a href="https://sites.google.com/view/staticquasar931/gm3z/hextris" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733693904/hextrisicon_sf6ydm.webp" alt="Hextris Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733693904/hextrisicon_sf6ydm.webp" alt="Hextris Game" onload="this.classList.add('loaded')">
             <div class="game-title">Hextris</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/sushi-master" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733649000/sushi-master-match-3_s8og4x.png" alt="Sushi Master Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733649000/sushi-master-match-3_s8og4x.png" alt="Sushi Master Game" onload="this.classList.add('loaded')">
             <div class="game-title">Sushi Master</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/rolling-vertex" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733693891/rollingvertexicon_jy6hrn.jpg" alt="Rolling Vertex Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733693891/rollingvertexicon_jy6hrn.jpg" alt="Rolling Vertex Game" onload="this.classList.add('loaded')">
             <div class="game-title">Rolling Vertex</div>
         </a>
+
         <!-- Swap with Emojis -->
         <a href="https://sites.google.com/view/staticquasar931/gm3z/swap" target="_blank" rel="noopener noreferrer" class="game small emoji">
-            <div class="emoji-content">🔼🔽</div>
+            <div class="emoji-content loaded">🔼🔽</div>
             <div class="game-title">Swap</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/vex6" target="_blank" rel="noopener noreferrer" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/vex6icon_z5rsql.jpg?_s=public-apps" alt="Vex 6 Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/vex6icon_z5rsql.jpg?_s=public-apps" alt="Vex 6 Game" onload="this.classList.add('loaded')">
             <div class="game-title">Vex 6</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/t3tris" target="_blank" rel="noopener noreferrer" class="game small">
-            <!-- Placeholder image for T3tris. Replace with actual image URL if available -->
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649006/BigTowerTinySquare_OG-logo_scmi5o.jpg?_s=public-apps" alt="T3tris Game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733694150/Tetris_logo_mjddfg.webp" alt="T3tris Game" onload="this.classList.add('loaded')">
             <div class="game-title">T3tris</div>
         </a>
     </div>
+
+    <!-- QR Code Section -->
+    <div class="qr-code">
+        <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733694622/frame_1_vmv9y3.png" alt="QR Code for Game Finder">
+    </div>
+
+    <!-- Footer with Google Form Link -->
+    <div class="footer">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFiegPH6GsWIWERzfbtptJW2GMk4exkrTQsdqlR2-2oj83zA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">Provide Feedback</a>
+    </div>
+
+    <script>
+        // JavaScript to handle image loading and adding 'loaded' class
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.game img');
+            images.forEach(img => {
+                if (img.complete) {
+                    img.classList.add('loaded');
+                } else {
+                    img.addEventListener('load', () => {
+                        img.classList.add('loaded');
+                    });
+                }
+            });
+
+            const emojis = document.querySelectorAll('.game.emoji .emoji-content');
+            emojis.forEach(emoji => {
+                emoji.classList.add('loaded');
+            });
+        });
+    </script>
 </body>
 </html>
