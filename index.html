@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle, #f0f8ff, #e0f7fa, #b3e5fc); /* Polished gradient background */
+            background: radial-gradient(circle, #f0f8ff, #e0f7fa, #b3e5fc); /* Improved gradient */
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -20,9 +20,9 @@
 
         .game-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Auto-fit columns */
             gap: 20px;
-            width: 95%;
+            width: 90%;
             max-width: 1600px;
             padding: 20px;
         }
@@ -34,7 +34,7 @@
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #e0e0e0; /* Fallback background color */
+            background: #e0e0e0; /* Fallback background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,7 +44,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
 
         .game:hover {
@@ -69,67 +68,58 @@
         .game:hover .game-title {
             opacity: 1;
         }
-
-        /* Size classes */
-        .game.large { grid-column: span 2; grid-row: span 2; }
-        .game.medium { grid-column: span 1.5; grid-row: span 1.5; }
-        .game.small { grid-column: span 1; grid-row: span 1; }
     </style>
 </head>
 <body>
     <div class="game-container">
-        <!-- Large Games -->
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" class="game large">
+        <!-- Game Entries -->
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" class="game">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649749/slope-game-v1_wkxd3b.jpg?_s=public-apps" alt="Slope Game">
             <div class="game-title">Slope</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" class="game large">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" class="game">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/drifthuntersicon_jktzb4.jpg?_s=public-apps" alt="Drift Hunters Game">
             <div class="game-title">Drift Hunters</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" class="game large">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" class="game">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649010/snow-rider-m180x180_ktraws.jpg?_s=public-apps" alt="Snow Rider Game">
             <div class="game-title">Snow Rider</div>
         </a>
-
-        <!-- Medium Games -->
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/blooky-blasta/with-ads" class="game medium">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/blooky-blasta/with-ads" class="game">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649003/blockblasticon_oayolq.jpg?_s=public-apps" alt="Block Blast Game">
             <div class="game-title">Blooky Blasta</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/paper-io" class="game medium">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/paper-io" class="game">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649001/paper-io-2-d_lop5lb.jpg?_s=public-apps" alt="Paper.io 2 Game">
             <div class="game-title">Paper.io 2</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/cookie-clicker" class="game medium">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/cookie-clicker" class="game">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649007/cookieclickericon_oz00tj.jpg?_s=public-apps" alt="Cookie Clicker Game">
             <div class="game-title">Cookie Clicker</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/big-tower-tiny-square" class="game medium">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/big-tower-tiny-square" class="game">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649006/BigTowerTinySquare_OG-logo_scmi5o.jpg?_s=public-apps" alt="Big Tower Tiny Square Game">
             <div class="game-title">Big Tower Tiny Square</div>
         </a>
-
-        <!-- Small Games -->
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/nugget-clicker" class="game small">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/nugget-clicker" class="game">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649002/nuggetclickericon_wvfv26.jpg?_s=public-apps" alt="Nugget Clicker Game">
             <div class="game-title">Nugget Clicker</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/static-gmes/coffee-clicker" class="game small">
-            <div style="font-size: 80px; text-align: center;">☕</div>
-            <div class="game-title">Coffee Clicker</div>
-        </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/circloo" class="game small">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/circloo" class="game">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/circloo_u0fhts.jpg?_s=public-apps" alt="Circloo Game">
             <div class="game-title">Circloo</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/swap" class="game small">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/Dino-Gvme" class="game">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/dinogameicon_wyehip.jpg?_s=public-apps" alt="Dino Game">
+            <div class="game-title">Dino Game</div>
+        </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/swap" class="game">
             <div style="font-size: 60px; text-align: center;">🔼🔽</div>
             <div class="game-title">Swap</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/Dino-Gvme" class="game small">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/dinogameicon_wyehip.jpg?_s=public-apps" alt="Dino Game">
-            <div class="game-title">Dino Game</div>
+        <a href="https://sites.google.com/view/staticquasar931/static-gmes/coffee-clicker" class="game">
+            <div style="font-size: 80px; text-align: center;">☕</div>
+            <div class="game-title">Coffee Clicker</div>
         </a>
     </div>
 </body>
