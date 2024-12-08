@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Finder</title>
-    <meta name="description" content="Discover and play games like Slope, Snow Rider, Blooky Blasta, Dino Game, and more! Enjoy a curated directory of fun games.">
+    <meta name="description" content="Discover and play games like Slope, Snow Rider, Block Blast, Dino Game, and more! Enjoy a curated directory of fun games.">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle, #f0f8ff, #e0f7fa, #b3e5fc); /* Improved gradient */
+            background: radial-gradient(circle, #f0f8ff, #e0f7fa, #b3e5fc); /* Smooth gradient */
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            min-height: 100vh;
         }
 
         .game-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Auto-fit columns */
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
             width: 90%;
             max-width: 1600px;
             padding: 20px;
@@ -68,58 +67,55 @@
         .game:hover .game-title {
             opacity: 1;
         }
+
+        /* Size classes */
+        .game.large { grid-column: span 2; grid-row: span 2; }
+        .game.medium { grid-column: span 1.5; grid-row: span 1.5; }
+        .game.small { grid-column: span 1; grid-row: span 1; }
     </style>
 </head>
 <body>
     <div class="game-container">
-        <!-- Game Entries -->
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" class="game">
+        <!-- Large and Mixed Games -->
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" class="game large">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649749/slope-game-v1_wkxd3b.jpg?_s=public-apps" alt="Slope Game">
             <div class="game-title">Slope</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" class="game">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/drifthuntersicon_jktzb4.jpg?_s=public-apps" alt="Drift Hunters Game">
-            <div class="game-title">Drift Hunters</div>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/merge-fruit" class="game small">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649005/mergefruiticon_rzz4yg.jpg?_s=public-apps" alt="Merge Fruit Game">
+            <div class="game-title">Merge Fruit</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" class="game">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/blooky-blasta/with-ads" class="game medium">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649003/blockblasticon_oayolq.jpg?_s=public-apps" alt="Block Blast Game">
+            <div class="game-title">Block Blast</div>
+        </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" class="game large">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649010/snow-rider-m180x180_ktraws.jpg?_s=public-apps" alt="Snow Rider Game">
             <div class="game-title">Snow Rider</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/blooky-blasta/with-ads" class="game">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649003/blockblasticon_oayolq.jpg?_s=public-apps" alt="Block Blast Game">
-            <div class="game-title">Blooky Blasta</div>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/stack" class="game small">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649006/run-3icon_priebu.jpg?_s=public-apps" alt="Stack Game">
+            <div class="game-title">Stack</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/paper-io" class="game">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649001/paper-io-2-d_lop5lb.jpg?_s=public-apps" alt="Paper.io 2 Game">
-            <div class="game-title">Paper.io 2</div>
-        </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/cookie-clicker" class="game">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649007/cookieclickericon_oz00tj.jpg?_s=public-apps" alt="Cookie Clicker Game">
-            <div class="game-title">Cookie Clicker</div>
-        </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/big-tower-tiny-square" class="game">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649006/BigTowerTinySquare_OG-logo_scmi5o.jpg?_s=public-apps" alt="Big Tower Tiny Square Game">
-            <div class="game-title">Big Tower Tiny Square</div>
-        </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/nugget-clicker" class="game">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649002/nuggetclickericon_wvfv26.jpg?_s=public-apps" alt="Nugget Clicker Game">
-            <div class="game-title">Nugget Clicker</div>
-        </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/circloo" class="game">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/circloo_u0fhts.jpg?_s=public-apps" alt="Circloo Game">
-            <div class="game-title">Circloo</div>
-        </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/Dino-Gvme" class="game">
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/dino-gvme" class="game medium">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649000/dinogameicon_wyehip.jpg?_s=public-apps" alt="Dino Game">
             <div class="game-title">Dino Game</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/swap" class="game">
-            <div style="font-size: 60px; text-align: center;">🔼🔽</div>
-            <div class="game-title">Swap</div>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/cookie-clicker" class="game medium">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649007/cookieclickericon_oz00tj.jpg?_s=public-apps" alt="Cookie Clicker Game">
+            <div class="game-title">Cookie Clicker</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/static-gmes/coffee-clicker" class="game">
-            <div style="font-size: 80px; text-align: center;">☕</div>
-            <div class="game-title">Coffee Clicker</div>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/big-tower-tiny-square" class="game medium">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649006/BigTowerTinySquare_OG-logo_scmi5o.jpg?_s=public-apps" alt="Big Tower Tiny Square Game">
+            <div class="game-title">Big Tower Tiny Square</div>
+        </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/adventure-capitalist" class="game small">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649002/adventurecapicon_ypbzu4.jpg?_s=public-apps" alt="Adventure Capitalist Game">
+            <div class="game-title">Adventure Capitalist</div>
+        </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/flappy-bird" class="game small">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649004/flappybirdicon_ofwk8d.jpg?_s=public-apps" alt="Flappy Bird Game">
+            <div class="game-title">Flappy Bird</div>
         </a>
     </div>
 </body>
