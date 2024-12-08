@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Finder</title>
-    <meta name="description" content="Discover your favorite games in this interactive directory! From Snow Rider to Angry Birds, find and play games easily.">
+    <meta name="description" content="Explore and play your favorite games like Snow Rider, Slope, Angry Birds, and many more.">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle, #e3f2fd, #bbdefb, #90caf9); /* Enhanced gradient background */
+            background: radial-gradient(circle, #e3f2fd, #bbdefb, #90caf9); /* Soft radial gradient */
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
-            flex-direction: column;
             align-items: center;
+            flex-direction: column;
             min-height: 100vh;
         }
 
@@ -34,12 +34,17 @@
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #e0e0e0; /* Fallback background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .game img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .game:hover {
@@ -76,51 +81,67 @@
         <!-- Large Games -->
         <a href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" class="game large">
             <img src="main/snow-rider-m180x180.webp" alt="Snow Rider Game">
-            <div class="game-title">Snow Rider Game</div>
+            <div class="game-title">Snow Rider</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" class="game large">
             <img src="main/mqdefault.jpg" alt="Slope Game">
-            <div class="game-title">Slope Game</div>
+            <div class="game-title">Slope</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" class="game large">
             <img src="main/drifthuntersicon.avif" alt="Drift Hunters Game">
-            <div class="game-title">Drift Hunters Game</div>
+            <div class="game-title">Drift Hunters</div>
         </a>
 
         <!-- Medium Games -->
         <a href="https://sites.google.com/view/staticquasar931/gm3z/paper-io" class="game medium">
             <img src="main/paper-io-2-d.webp" alt="Paper.io 2 Game">
-            <div class="game-title">Paper.io 2 Game</div>
+            <div class="game-title">Paper.io 2</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/moto-x3m" class="game medium">
             <img src="main/motoicon.jpg" alt="Moto X3M Game">
-            <div class="game-title">Moto X3M Game</div>
+            <div class="game-title">Moto X3M</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/cookie-clicker" class="game medium">
             <img src="main/cookieclickericon.webp" alt="Cookie Clicker Game">
-            <div class="game-title">Cookie Clicker Game</div>
+            <div class="game-title">Cookie Clicker</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/big-tower-tiny-square" class="game medium">
             <img src="main/BigTowerTinySquare_OG-logo.jpg" alt="Big Tower Tiny Square Game">
-            <div class="game-title">Big Tower Tiny Square Game</div>
+            <div class="game-title">Big Tower Tiny Square</div>
         </a>
 
         <!-- Small Games -->
         <a href="https://sites.google.com/view/staticquasar931/gm3z/nugget-clicker" class="game small">
             <img src="main/nuggetclickericon.jpg" alt="Nugget Clicker Game">
-            <div class="game-title">Nugget Clicker Game</div>
+            <div class="game-title">Nugget Clicker</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/static-gmes/coffee-clicker" class="game small">
             <div style="font-size: 80px; text-align: center;">☕</div>
-            <div class="game-title">Coffee Clicker Game</div>
+            <div class="game-title">Coffee Clicker</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/angry-birds" class="game small">
             <img src="main/Angry_Birds_promo_art.png" alt="Angry Birds Game">
-            <div class="game-title">Angry Birds Game</div>
+            <div class="game-title">Angry Birds</div>
         </a>
         <a href="https://sites.google.com/view/staticquasar931/static-gmes/interstellar-trader/intersteller-trader-beta" class="game small">
-            <img src="main/neonblastersicon.jpg" alt="Interstellar Trader Beta Game">
-            <div class="game-title">Interstellar Trader Beta Game</div>
+            <img src="main/88bd324e-48b1-4f80-b75f-bb707da10cf6.webp" alt="Interstellar Trader Beta Game">
+            <div class="game-title">Interstellar Trader Beta</div>
+        </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/circloo" class="game small">
+            <img src="main/circloo.webp" alt="Circloo Game">
+            <div class="game-title">Circloo</div>
+        </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/sushi-master" class="game small">
+            <img src="main/sushi-master-match-3.png" alt="Sushi Master Game">
+            <div class="game-title">Sushi Master</div>
+        </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/swap" class="game small">
+            <div style="font-size: 60px; text-align: center;">🔼🔽</div>
+            <div class="game-title">Swap</div>
+        </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/dino-gvme" class="game small">
+            <img src="main/dinogameicon.png" alt="Dino Game">
+            <div class="game-title">Dino Game</div>
         </a>
     </div>
 </body>
