@@ -20,7 +20,7 @@
 
         .game-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 15px;
             width: 90%;
             max-width: 1600px;
@@ -86,9 +86,21 @@
         }
 
         /* Size classes */
-        .game.large { grid-column: span 2; grid-row: span 2; }
-        .game.medium { grid-column: span 1.5; grid-row: span 1.5; }
-        .game.small { grid-column: span 1; grid-row: span 1; }
+        .game.large { 
+            grid-column: span 2; 
+            grid-row: span 2; 
+            min-height: 200px;
+        }
+        .game.medium { 
+            grid-column: span 1.5; 
+            grid-row: span 1.5; 
+            min-height: 175px;
+        }
+        .game.small { 
+            grid-column: span 1; 
+            grid-row: span 1; 
+            min-height: 150px;
+        }
 
         /* Emoji Styles */
         .game.emoji {
@@ -151,6 +163,30 @@
             background-color: #333;
             color: #ffffff;
         }
+
+        /* Ensure full screen usage */
+        html, body {
+            height: 100%;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .qr-code a img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .game.large { 
+                grid-column: span 1; 
+                grid-row: span 1; 
+                min-height: 150px;
+            }
+            .game.medium { 
+                grid-column: span 1; 
+                grid-row: span 1; 
+                min-height: 150px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -161,14 +197,6 @@
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/drifthuntersicon_jktzb4.jpg?_s=public-apps" alt="Drift Hunters Game" onload="this.classList.add('loaded')">
             <div class="game-title">Drift Hunters</div>
         </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/paper-io" target="_blank" rel="noopener noreferrer" class="game medium">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649001/paper-io-2-d_lop5lb.jpg?_s=public-apps" alt="Paper.io 2 Game" onload="this.classList.add('loaded')">
-            <div class="game-title">Paper.io 2</div>
-        </a>
-        <a href="https://sites.google.com/view/staticquasar931/gm3z/moto-x3m" target="_blank" rel="noopener noreferrer" class="game medium">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/motoicon_qkrb7c.jpg?_s=public-apps" alt="Moto X3M Game" onload="this.classList.add('loaded')">
-            <div class="game-title">Moto X3M</div>
-        </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" target="_blank" rel="noopener noreferrer" class="game large">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649749/slope-game-v1_wkxd3b.jpg?_s=public-apps" alt="Slope Game" onload="this.classList.add('loaded')">
             <div class="game-title">Slope</div>
@@ -177,11 +205,21 @@
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649010/snow-rider-m180x180_ktraws.jpg?_s=public-apps" alt="Snow Rider Game" onload="this.classList.add('loaded')">
             <div class="game-title">Snow Rider</div>
         </a>
+
+        <!-- Medium Games -->
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/paper-io" target="_blank" rel="noopener noreferrer" class="game medium">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649001/paper-io-2-d_lop5lb.jpg?_s=public-apps" alt="Paper.io 2 Game" onload="this.classList.add('loaded')">
+            <div class="game-title">Paper.io 2</div>
+        </a>
+        <a href="https://sites.google.com/view/staticquasar931/gm3z/moto-x3m" target="_blank" rel="noopener noreferrer" class="game medium">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649008/motoicon_qkrb7c.jpg?_s=public-apps" alt="Moto X3M Game" onload="this.classList.add('loaded')">
+            <div class="game-title">Moto X3M</div>
+        </a>
         <a href="https://sites.google.com/view/staticquasar931/gm3z/blooky-blasta/with-ads" target="_blank" rel="noopener noreferrer" class="game medium">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649003/blockblasticon_oayolq.jpg?_s=public-apps" alt="Block Blast Game" onload="this.classList.add('loaded')">
             <div class="game-title">Block Blast</div>
         </a>
-        
+
         <!-- Small Games -->
         <a href="https://sites.google.com/view/staticquasar931/gm3z/neon-blasters" target="_blank" rel="noopener noreferrer" class="game small">
             <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733649007/neonblastersicon_bqp1zz.jpg" alt="Neon Blasters Game" onload="this.classList.add('loaded')">
@@ -288,15 +326,14 @@
     </div>
 
     <!-- QR Code Section -->
-    <div class="qr-code">
-        <a href="https://your-homepage-url.com" target="_blank" rel="noopener noreferrer">
-            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733694622/frame_1_vmv9y3.png" alt="QR Code for Game Finder">
-        </a>
-    </div>
-
-    <!-- Footer with Google Form Link -->
     <div class="footer">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFiegPH6GsWIWERzfbtptJW2GMk4exkrTQsdqlR2-2oj83zA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">Provide Feedback</a>
+    </div>
+
+    <div class="qr-code">
+        <a href="https://sites.google.com/view/staticquasar931" target="_blank" rel="noopener noreferrer">
+            <img src="https://res.cloudinary.com/dcsrqennd/image/upload/v1733694622/frame_1_vmv9y3.png" alt="QR Code for Game Finder">
+        </a>
     </div>
 
     <script>
